@@ -38,9 +38,12 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+    
     <div class="container my-5">
+
         <form method="post">
             <div class="form-group col-2">
+                
                 <label>USN</label>
                 <input type="text" class="form-control" placeholder="Enter your USN" name="USN" autocomplete="off">
             </div>

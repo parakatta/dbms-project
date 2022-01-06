@@ -11,53 +11,94 @@
 </head>
 
 <body>
-<section>
-  <div class="container">
-    <div class="login-box">
-      <div class="row">
+  <section>
+    <div class="container">
+      <div class="login-box">
+        <div class="row">
 
 
-        <div class="col-md-6 login-left">
-          <h2>login</h2>
-          <form action="validation.php" method="post">
-            <div class="form-group">
-              <label>Enter username</label>
-              <input type="text" class="form-control" name="username" placeholder="Enter username" autocomplete="off">
+          <div class="col-md-6 login-left">
+            <h2>LOGIN</h2>
+            <?php
+            if (@$_GET['Empty'] == true) {
+            ?>
+              <div class="alert-light text-danger text-center py-3"><?php echo $_GET['Empty'] ?></div>
+            <?php
+            }
+            ?>
 
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off">
-            </div>
+            <?php
+            if (@$_GET['Invalid'] == true) {
+            ?>
+              <div class="alert-light text-danger text-center py-3"><?php echo $_GET['Invalid'] ?></div>
+            <?php
+            }
+            ?>
+            <form action="validation.php" method="post">
+              <div class="form-group">
+                <label>Enter username</label>
+                <input type="text" class="form-control" name="username" placeholder="Enter username" autocomplete="off">
 
-            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-          </form>
-        </div>
-        <div class="col-md-6 login-right">
-          <h2>Register</h2>
-          <form action="register.php" method="post">
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off">
+              </div>
 
-            <div class="form-group">
+              <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+            </form>
+          </div>
+          <div class="col-md-6 login-right">
+            <h2>REGISTER</h2>
+            <?php
+            if (@$_GET['Empty'] == true) {
+            ?>
+              <div class="alert-light text-danger text-center py-3"><?php echo $_GET['Empty'] ?></div>
+            <?php
+            }
+            ?>
 
-              <label>Enter username</label>
-              <input type="text" class="form-control" name="username" placeholder="Enter username">
+            <?php
+            if (@$_GET['Invalid'] == true) {
+            ?>
+              <div class="alert-light text-danger text-center py-3"><?php echo $_GET['Invalid'] ?></div>
+            <?php
+            }
+            ?>
 
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input type="password" class="form-control" name="password" placeholder="Password">
-            </div>
+            <form action="register.php" method="post">
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+              <div class="form-group">
 
-          </form>
+                <label>Enter username</label>
+                <input type="text" class="form-control" name="username" placeholder="Enter username">
+
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </section>
+  <style>
+    body {
+      background: linear-gradient(rgb(187, 187, 187), rgba(230, 230, 235, 0.5)),
+        url("../css/nrr.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+    }
+  </style>
 </body>
 
 </html>

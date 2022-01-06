@@ -32,17 +32,10 @@ include 'connect.php';
   </div>
   <div class="container">
     <span class="navbar-text">
-    <button class="btn btn-primary my-5 stu"><a href="add.php" class="text-light">Add Student</a>
-    <button class="btn btn-primary my-5 stu"><a href="index.html" class="text-light">Go Back</a>
+    
+    <button class="btn btn-primary my-5 stu"><a href="page.php" class="text-light">Go Back</a>
     </button></span>
-    <ul class="nav nav-tabs my-5">
-      <li class="nav-item active"><a class="nav-link" href="page.php">TEST 1</a></li>
-      <li class="nav-item"><a class="nav-link" href="add.php">TEST 2</a></li>
-      <li class="nav-item"><a class="nav-link" href="staff.php">TEST 3</a></li>
-      <li class="nav-item"><a class="nav-link" href="average.php">AVERAGE</a></li>
-      <li class="nav-item"><a class="nav-link" href="attendance.php">ATTENDENCE</a></li>
-
-    </ul>
+    
     <table class="table">
       <thead>
         <tr>
@@ -60,18 +53,18 @@ include 'connect.php';
       <tbody>
         <!--php script-->
         <?php
-        $sql = "select * from `marks`";
+        $sql = "select * from `attendence`";
         $result = mysqli_query($con, $sql);
         if ($result) {
           while ($row = mysqli_fetch_assoc($result)) {
             $usn = $row['USN'];
             $name = $row['stud_name'];
-            $sub1 = $row['18CS51'];
-            $sub2 = $row['18CS52'];
-            $sub3 = $row['18CS53'];
-            $sub4 = $row['18CS54'];
-            $sub5 = $row['18CS55'];
-            $sub6 = $row['18CS56'];
+            $sub1 = $row['CS51'];
+            $sub2 = $row['CS52'];
+            $sub3 = $row['CS53'];
+            $sub4 = $row['CS54'];
+            $sub5 = $row['CS55'];
+            $sub6 = $row['CS56'];
 
 
             echo '
@@ -86,8 +79,8 @@ include 'connect.php';
       <td>' . $sub6 . '</td>
 
       <td>
-     <button class="btn btn-primary"><a href="update.php?updateid=' . $usn . '" class="text-light">Update</a></button>
-     <button class="btn btn-danger"><a href="delete.php?deleteid=' . $usn . '" class="text-light">Delete</a></button>
+     <button class="btn btn-primary"><a href="updateAtt.php?updateid=' . $usn . '" class="text-light">Update</a></button>
+     <button class="btn btn-danger"><a href="deleteAtt.php?deleteid=' . $usn . '" class="text-light">Delete</a></button>
 
  </td>
     </tr>';
