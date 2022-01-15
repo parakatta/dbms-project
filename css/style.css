@@ -102,7 +102,7 @@ section{
     background-color:#887A92 ;
     width:100%;
     max-width:100vh;
-    
+    <button class="btn btn-primary"><a href="update.php?updateid='. $usn .'" class="text-light" >Update</a></button>
     
    
 }*/
@@ -110,26 +110,30 @@ section{
   margin: 0;
   padding: 0;
 }
-body{
-  background: linear-gradient(rgb(187, 187, 187), rgba(230, 230, 235, 0.5)),
-    url("/css/nrr.jpg") !important;
-
+body {
+  background-image:url("../css/mini.png");
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  
+
 }
 .login-box {
   max-width: 800px;
   float: none;
   margin: 150px auto;
+  
 }
 .login-left {
-  background-color: rgba(253, 240, 255, 0.829);
+  background-color: #7e7286;
   padding: 30px;
+  color: white;
+  float: left;
+  box-shadow: 0px 0px 61px 7px #181c1f40;
 }
 .login-right {
-  background-color: rgb(199, 175, 201);
+  background-color: #c1b0c2;
   padding: 30px;
+  box-shadow: 0px 0px 61px 7px #181c1f40;
 }
 .form-control {
   background-color: transparent;

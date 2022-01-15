@@ -13,10 +13,13 @@
 <body>
   <section>
     <div class="container">
+    <span class="nav-item" >
+    <button class="btn btn-primary my-5 stu"><a href="../index.html" class="text-light" >Main</a>
+    </button></span>
       <div class="login-box">
         <div class="row">
 
-
+         
           <div class="col-md-6 login-left">
             <h2>LOGIN</h2>
             <?php
@@ -43,6 +46,10 @@
               <div class="form-group">
                 <label>Password</label>
                 <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label>Subject Code</label>
+                <input type="text" class="form-control" name="sub" placeholder="Subject Code">
               </div>
 
               <button type="submit" class="btn btn-primary" name="submit">Submit</button>
@@ -78,6 +85,10 @@
                 <label>Password</label>
                 <input type="password" class="form-control" name="password" placeholder="Password">
               </div>
+              <div class="form-group">
+                <label>Subject Code</label>
+                <input type="text" class="form-control" name="sub" placeholder="Subject Code">
+              </div>
 
               <button type="submit" class="btn btn-primary">Submit</button>
 
@@ -90,13 +101,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </section>
   <style>
-    body {
-      background: linear-gradient(rgb(187, 187, 187), rgba(230, 230, 235, 0.5)),
-        url("../css/nrr.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-
+    .stu{
+      float:left;
+      position:absolute;
+      top:5%;
+      
     }
   </style>
 </body>

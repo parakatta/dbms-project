@@ -5,6 +5,7 @@ include 'connect.php';
 
 $username = $_POST['username'];
 $password = $_POST['password'];
+$sub=$_POST['sub'];
 if (empty($username) || empty($password)) {
        header("location:staff.php?Empty= Please Fill in the Blanks");
 } else {
@@ -15,8 +16,8 @@ if (empty($username) || empty($password)) {
               //  $_SESSION['username']=$username;
               header('location:staff.php?Invalid= Wrong username or password');
        } else {
-              $_SESSION['username'] = $username;
-        $id = $_SESSION['username'];
-              header('location:page.php');
+              $_SESSION['sub'] = $sub;
+              
+              header('location:dashboard.php');
        }
 }

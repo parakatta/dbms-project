@@ -1,11 +1,11 @@
 <?php
 include 'connect.php';
-$subcode=$_SESSION['sub'];
 /*if(isset($_POST['submit'])){
   $username=$_POST['username'];
   $password=$_POST['password'];
 
 }*/
+
 ?>
 
 
@@ -23,9 +23,8 @@ $subcode=$_SESSION['sub'];
 </head>
 
 <body>
-<section>
-  
-<div class="sidenav">
+  <section>
+  <div class="sidenav">
 <div class="profile">
                 <img src="../css/user.png">
                 <h3>STAFF</h3>
@@ -37,72 +36,58 @@ $subcode=$_SESSION['sub'];
   <a class="nav-link" href="attendance.php" align="center">Attendence</a>
   <a class="nav-link" href="view.php" align="center">View All</a>
   <a class="nav-link" href="staff.php"align="center">Log Out</a>
+
 </div>
+
   <div class="container">
-  <nav class="navbar navbar-light my-5" style="margin-left:10px;background:rgb(243,234,243);">
-  <span class="navbar-brand mb-2 h1"style="margin-left:10px;">Attendance</span>
-</nav>
-    
+    <button class="btn btn-primary stu"><a href="add.php" class="text-link" style="color:white">Add Student</a></button>
+  <nav class="navbar navbar-light " style="margin-top:-5%;margin-left:10px;margin-bottom:30px;background:rgb(243,234,243);">
+  <span class="navbar-brand mb-2 h1"style="margin-left:10px;">View marks</span>
+</nav><br><br>
     
     <table class="table">
       <thead>
         <tr>
           <th scope="col">USN</th>
           <th scope="col">NAME</th>
-          <th scope="col"><?php echo $subcode;?></th>
-          <!-- <th scope="col">18CS52</th>
+          <th scope="col">18CS51</th>
+          <th scope="col">18CS52</th>
           <th scope="col">18CS53</th>
           <th scope="col">18CS54</th>
           <th scope="col">18CS55</th>
-          <th scope="col">18CS56</th> -->
-          <th scope="col">EDIT</th>
+          <th scope="col">18CS56</th>
+          
         </tr>
       </thead>
       <tbody>
         <!--php script-->
         <?php
-        $sql = "select * from `attendence`";
+        $sql = "select * from `marks`";
         $result = mysqli_query($con, $sql);
         if ($result) {
           while ($row = mysqli_fetch_assoc($result)) {
             $usn = $row['USN'];
             $name = $row['stud_name'];
-            $sub1 = $row['CS51'];
-            $sub2 = $row['CS52'];
-            $sub3 = $row['CS53'];
-            $sub4 = $row['CS54'];
-            $sub5 = $row['CS55'];
-            $sub6 = $row['CS56'];
+            $sub1 = $row['18CS51'];
+            $sub2 = $row['18CS52'];
+            $sub3 = $row['18CS53'];
+            $sub4 = $row['18CS54'];
+            $sub5 = $row['18CS55'];
+            $sub6 = $row['18CS56'];
+
 
             echo '
-            <tr>
-        <th scope="row">' . $usn . '</th>
-        <td>' . $name . '</td>';
-        if($subcode=='18CS51'){
-          echo '<td>' . $sub1 . '</td>';
-        }
-        else if($subcode=='18CS52'){
-          echo '<td>' . $sub2 . '</td>';
-        }
-        else if($subcode=='18CS53'){
-          echo '<td>' . $sub3 . '</td>';
-        }
-        else if($subcode=='18CS54'){
-          echo '<td>' . $sub4 . '</td>';
-        }
-        else if($subcode=='18CS55'){
-          echo '<td>' . $sub5 . '</td>';
-        }
-        else if($subcode=='18CS56'){
-          echo '<td>' . $sub6 . '</td>';
-        }
-            
+          <tr>
+      <th scope="row">' . $usn . '</th>
+      <td>' . $name . '</td>
+      <td>' . $sub1 . '</td>
+      <td>' . $sub2 . '</td>
+      <td>' . $sub3 . '</td>
+      <td>' . $sub4 . '</td>
+      <td>' . $sub5 . '</td>
+      <td>' . $sub6 . '</td>
 
-      echo '<td>
-     <button class="btn btn-primary"><a href="updateAtt.php?updateid=' . $usn . '" class="text-light">Update</a></button>
-     
-
- </td>
+      
     </tr>';
           }
         }
@@ -117,7 +102,10 @@ $subcode=$_SESSION['sub'];
     .container{
       position: absolute;
       margin-left:15%;
+      top:20%;
       padding: 0px 10px;
+      /* margin-left: 160px; 
+      padding: 0px 10px; */
     }
     
     .sidenav {
@@ -145,9 +133,9 @@ $subcode=$_SESSION['sub'];
 .sidenav a:hover {
   color: #f1f1f1;
 }
+
     .stu{
       float:right;
-      margin-right: 5px;
     }
     .sidenav  .profile{
     margin-bottom: 30px;
@@ -174,7 +162,6 @@ $subcode=$_SESSION['sub'];
    
     </style>
   </section>
-
 </body>
 
 </html>

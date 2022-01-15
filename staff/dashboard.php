@@ -1,8 +1,3 @@
-<?php 
-include 'connect.php';
-
-$id=$_SESSION['usn'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,29 +10,32 @@ $id=$_SESSION['usn'];
 </head>
 
 <body>
+
 <div class="sidenav">
 <div class="profile">
                 <img src="../css/user.png">
-                <h3><?php echo $id; ?></h3>
+                <h3>STAFF</h3>
                 <p>Logged in</p>
 </div>
-  <a class="nav-link" href="stumain.php" align="center">Dashboard</a>
-  <a class="nav-link" href="stumarks.php"align="center">My Marks</a>
-  
-  <a class="nav-link" href="attendence.php"align="center">My Attendence</a>
-  <a class="nav-link" href="student.php"align="center">Log Out</a>
-  
+<a class="nav-link" href="dashboard.php" align="center">Dashboard</a>
+  <a class="nav-link" href="page.php"align="center">Marks</a>
+  <a class="nav-link" href="average.php" align="center">Average</a>
+  <a class="nav-link" href="attendance.php" align="center">Attendence</a>
+  <a class="nav-link" href="view.php" align="center">View All</a>
+  <a class="nav-link" href="staff.php"align="center">Log Out</a>
+
 </div>
-<div class="container two">
-<nav class="navbar navbar-light " style="background:rgb(243,234,243);">
-  <span class="navbar-brand mb-2 h1">Welcome <?php echo $id;  ?></span>
+<div class="container">
+<nav class="navbar navbar-light my-5" style="background:rgb(243,234,243);">
+  <span class="navbar-brand mb-2 h1">Welcome, User</span>
 </nav>
+   
   <div class="container py-5">
     <div class="row">
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm" style="width: 18rem; height:14rem;background:#887A92;">
           <div class="card-body">
-            <h5 class="card-title"><a class="nav-link" style="color:white;" href="stumarks.php?id=".$id.>My marks</a></h5>
+            <h5 class="card-title"><a class="nav-link" style="color:white;" href="#">Info</a></h5>
 
           </div>
         </div>
@@ -45,7 +43,7 @@ $id=$_SESSION['usn'];
       <div class="col-md-6">
         <div class="card mb-4 shadow-sm" style="width: 18rem; height:14rem; background:#887A92;">
           <div class="card-body">
-            <h5 class="card-title"><a class="nav-link" style="color:white;" href="attendence.php">My attendence</a></h5>
+            <h5 class="card-title"><a class="nav-link" style="color:white;" href="#">Info</a></h5>
 
           </div>
         </div>
@@ -54,14 +52,8 @@ $id=$_SESSION['usn'];
     </div>
   </div>
 </div>
-<style>
-  .two{
-      position: absolute;
-      top:5%;
-      margin-left: 15%; 
-      padding: 0px 10px;
-    }
-    
+</body>
+<style type="text/css">
     .sidenav {
   height: 100%; 
   width: 240px; 
@@ -109,8 +101,6 @@ $id=$_SESSION['usn'];
     font-size: 14px;
     
 }
-
 </style>
-</body>
 
 </html>

@@ -17,6 +17,9 @@ include 'connect.php';
 <body>
   <section>
     <div class="container">
+    
+    <button class="btn btn-primary my-5 stu"><a href="../index.html" class="text-light" >Main</a>
+    </button>
       <div class="login-box">
         <div class="row">
 
@@ -99,14 +102,13 @@ include 'connect.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </section>
   <style>
-    body {
-      background: linear-gradient(rgb(187, 187, 187, 0), rgba(230, 230, 235, 0.5)),
-        url("../css/nrr.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-
+    .stu{
+      float:left;
+      position:absolute;
+      top:5%;
+      
     }
+   
   </style>
 </body>
 
