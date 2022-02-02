@@ -1,8 +1,9 @@
 <?php
 include 'connect.php';
 $subcode = $_SESSION['sub'];
+$tab3 = "_3";
+$subcod = $subcode . $tab3;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,28 +28,26 @@ $subcode = $_SESSION['sub'];
 <body>
   <section>
     <div class="sidenav">
-      <div class="sidebar">
-        <div class="profile">
-          <img src="../css/user.png" />
-          <h3>STAFF</h3>
-          <p>Logged in</p>
-        </div>
-        <a class="nav-link" href="dashboard.php" align="left"><i class="fa fa-clipboard" style="margin-right:8px;"></i>Dashboard</a>
-        <a class="nav-link" href="page.php" align="left"><i class="fa fa-file-text" style="margin-right:8px;"></i>Marks</a>
-        <a class="nav-link" href="average.php" align="left"><i class="fa fa-area-chart" style="margin-right:8px;"></i>Average</a>
-        <a class="nav-link" href="attendance.php" align="left"><i class="fa fa-check-square-o" style="margin-right:8px;"></i>Attendence</a>
-        <a class="nav-link" href="view.php" align="left"><i class="fa fa-eye" style="margin-right:8px;"></i>View All</a>
-        <a class="nav-link" href="staff.php" align="left"><i class="fa fa-arrow-left" style="margin-right:8px;"></i>Log Out</a>
+      <div class="profile">
+        <img src="../css/user.png">
+        <h3>STAFF</h3>
+        <p>Logged in</p>
       </div>
+      <a class="nav-link" href="dashboard.php" align="left"><i class="fa fa-clipboard" style="margin-right:8px;"></i>Dashboard</a>
+      <a class="nav-link" href="page.php" align="left"><i class="fa fa-file-text" style="margin-right:8px;"></i>Marks</a>
+      <a class="nav-link" href="average.php" align="left"><i class="fa fa-area-chart" style="margin-right:8px;"></i>Average</a>
+      <a class="nav-link" href="attendance.php" align="left"><i class="fa fa-check-square-o" style="margin-right:8px;"></i>Attendence</a>
+      <a class="nav-link" href="view.php" align="left"><i class="fa fa-eye" style="margin-right:8px;"></i>View All</a>
+      <a class="nav-link" href="staff.php" align="left"><i class="fa fa-arrow-left" style="margin-right:8px;"></i>Log Out</a>
     </div>
     <div class="container">
       <nav class="navbar navbar-light my-5" style="margin-left:10px;background:rgb(243,234,243);">
-        <span class="navbar-brand mb-2 h1" style="margin-left:10px;">First Internal Marks</span>
+        <span class="navbar-brand mb-2 h1" style="margin-left:10px;">Third Internal Marks</span>
       </nav>
       <ul class="nav nav-tabs my-5">
-        <li class="nav-item active"><a class="nav-link" href="page.php">TEST 1</a></li>
+        <li class="nav-item "><a class="nav-link" href="page.php">TEST 1</a></li>
         <li class="nav-item"><a class="nav-link" href="page2.php">TEST 2</a></li>
-        <li class="nav-item"><a class="nav-link" href="page3.php">TEST 3</a></li>
+        <li class="nav-item active"><a class="nav-link" href="page3.php">TEST 3</a></li>
       </ul>
       <table class="table">
         <thead>
@@ -62,25 +61,24 @@ $subcode = $_SESSION['sub'];
         <tbody>
           <!--php script-->
           <?php
-          $sql = "select USN,stud_name,`" . $subcode . "` from marks";
+          $sql = "SELECT * from `marks_3` ";
           $result = mysqli_query($con, $sql);
           if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
               $usn = $row['USN'];
               $name = $row['stud_name'];
-              $sub1 = $row['' . $subcode . ''];
-
+              $sub1 = $row[''.$subcod.''];
+             
               echo '
-          <tr>
-      <th scope="row">' . $usn . '</th>
-      <td class="row_id">' . $name . '</td>
-      <td class="row_id">' . $sub1 . '</td>
-      <td>
-      <button class="btn btn-primary update_btn" type="button"  data-target="#updaterow">Update</button>
-      <button class="btn btn-danger delete_btn" type="button"  data-target="#deleterow">Delete</button>
- 
-  </td> </tr>
-  ';
+              <tr>
+              <th scope="row">' . $usn . '</th>
+              <td class="row_id">' . $name . '</td>
+              <td class="row_id">' . $sub1 . '</td>
+              <td>
+              <button class="btn btn-primary update_btn" type="button"  data-target="#updaterow">Update</button>
+              <button class="btn btn-danger delete_btn" type="button"  data-target="#deleterow">Delete</button>
+         
+          </td> </tr>';
             }
           }
           ?>
@@ -93,7 +91,7 @@ $subcode = $_SESSION['sub'];
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <form method="post" action="delete.php">
+                <form method="post" action="delete3.php">
                   <div class="modal-body">
                     <input type="hidden" name="delete_id" id="delete_id" />
                     <h6>Are you sure you want to delete this record?</h6>
@@ -134,11 +132,12 @@ $subcode = $_SESSION['sub'];
     <style type="text/css">
       .container {
         position: absolute;
+
         margin-left: 15%;
         padding: 0px 10px;
       }
 
-      .sidenav .sidebar {
+      .sidenav {
         height: 100%;
         width: 240px;
         position: fixed;
@@ -151,7 +150,7 @@ $subcode = $_SESSION['sub'];
       }
 
       /* The navigation menu links */
-      .sidenav .sidebar a {
+      .sidenav a {
         padding: 6px 8px 6px 16px;
         text-decoration: none;
         font-size: 25px;
@@ -159,7 +158,8 @@ $subcode = $_SESSION['sub'];
         display: block;
       }
 
-      .sidenav .sidebar a:hover {
+
+      .sidenav a:hover {
         color: #f1f1f1;
       }
 
@@ -168,12 +168,12 @@ $subcode = $_SESSION['sub'];
         margin-right: 5px;
       }
 
-      .sidenav .sidebar .profile {
+      .sidenav .profile {
         margin-bottom: 30px;
         text-align: center;
       }
 
-      .sidenav .sidebar .profile img {
+      .sidenav .profile img {
         display: block;
         width: 100px;
         height: 100px;
@@ -181,20 +181,17 @@ $subcode = $_SESSION['sub'];
         margin: 0 auto;
       }
 
-      .sidenav .sidebar .profile h3 {
+      .sidenav .profile h3 {
         color: #ffffff;
         margin: 10px 0 5px;
       }
 
-      .sidenav .sidebar .profile p {
+      .sidenav .profile p {
         color: rgb(206, 240, 253);
         font-size: 14px;
       }
     </style>
   </section>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-  <!--   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
- -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -221,7 +218,7 @@ $subcode = $_SESSION['sub'];
 
         }).get();
 
-        $('#formid').attr('action', 'update.php?updateid=' + data[0]);
+        $('#formid').attr('action', 'update3.php?updateid=' + data[0]);
 
       });
     });

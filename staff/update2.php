@@ -1,25 +1,26 @@
 <?php
 include 'connect.php';
 $subcode = $_SESSION['sub'];
+$tab2 = "_2";
+$subcod = $subcode . $tab2;
 
 $id = $_GET['updateid'];
-$sql1 = "SELECT * FROM `marks` WHERE USN='$id'";
+$sql1 = "SELECT * FROM `marks_2` WHERE USN='$id'";
 $result = mysqli_query($con, $sql1);
 $row = mysqli_fetch_assoc($result);
 $usn1 = $row['USN'];
 $name1 = $row['stud_name'];
-$subb = $row['' . $subcode . ''];
-
+$subb = $row['' . $subcod . ''];
 if (isset($_POST['submit'])) {
     $usn = $_POST['USN'];
     $name = $_POST['name'];
     $sub = $_POST['subc'];
-
-    //$sql2 = "UPDATE marks SET `'" . $subcode ."''`=$sub WHERE USN='$id'";
-    $sql2 = "update  marks SET USN='$usn',stud_name='$name',`" . $subcode . "`=$sub WHERE USN='$id'";
+    $sql2 = "UPDATE marks_2 SET USN='$usn',stud_name='$name',
+`" . $subcod . "`=$sub WHERE USN='$id'";
+    /* 18CS52=$sub2,18CS53=$sub3,18CS54=$sub4,18CS55=$sub5,18CS56=$sub6 */
     $result = mysqli_query($con, $sql2);
     if ($result) {
-        header('location:page.php');
+        header('location:page2.php');
     } else {
         die(mysqli_error($con));
     }
@@ -32,6 +33,7 @@ if (isset($_POST['submit'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -54,6 +56,7 @@ if (isset($_POST['submit'])) {
         <a class="nav-link" href="staff.php" align="left"><i class="fa fa-arrow-left" style="margin-right:8px;"></i>Log Out</a>
     </div>
     <div class="container my-5">
+        <!--  <div class="card" style="width:500px; height:400px;"> -->
         <div class="card" style="position:absolute;width:700px; height:400px;left:20%;">
             <article class="card-body">
                 <h4 class="card-title text-center mb-4 mt-1">Update</h4>
@@ -72,7 +75,7 @@ if (isset($_POST['submit'])) {
                         <input type="text" class="form-control" name="subc" autocomplete="off" value="<?php echo $subb; ?>">
                     </div><br>
                     <button type="submit" class="btn btn-primary " name="submit">Submit</button>
-                    <button type="button" class="btn btn-secondary " name="Cancel"><a href="page.php" class="text-light">Cancel</a></button>
+                    <button type="button" class="btn btn-secondary " name="Cancel"><a href="page2.php" class="text-light">Cancel</a></button>
                 </form>
             </article>
         </div>
@@ -145,7 +148,7 @@ if (isset($_POST['submit'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <!-- <script src="jquery-3.5.1.min.js"></script>  -->
+    <script src="jquery-3.5.1.min.js"></script>
 </body>
 
 </html>

@@ -13,13 +13,11 @@
 <body>
   <section>
     <div class="container">
-    <span class="nav-item" >
-    <button class="btn btn-primary my-5 stu"><a href="../index.html" class="text-light" >Main</a>
-    </button></span>
+      <span class="nav-item">
+        <button class="btn btn-primary my-5 stu"><a href="../index.html" class="text-light">Main</a>
+        </button></span>
       <div class="login-box">
         <div class="row">
-
-         
           <div class="col-md-6 login-left">
             <h2>LOGIN</h2>
             <?php
@@ -91,21 +89,19 @@
               </div>
 
               <button type="submit" class="btn btn-primary">Submit</button>
-
             </form>
           </div>
         </div>
       </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </section>
   <style>
-    .stu{
-      float:left;
-      position:absolute;
-      top:5%;
-      
+    .stu {
+      float: left;
+      position: absolute;
+      top: 5%;
+
     }
   </style>
 </body>

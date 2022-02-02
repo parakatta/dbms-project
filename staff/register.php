@@ -1,7 +1,5 @@
 <?php
-
 include 'connect.php';
-
 //header('location:staff.php');
 $username = $_POST['username'];
 $password = $_POST['password'];

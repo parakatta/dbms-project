@@ -1,7 +1,6 @@
 <?php
 include 'connect.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,13 +16,10 @@ include 'connect.php';
 <body>
   <section>
     <div class="container">
-    
-    <button class="btn btn-primary my-5 stu"><a href="../index.html" class="text-light" >Main</a>
-    </button>
+      <button class="btn btn-primary my-5 stu"><a href="../index.html" class="text-light">Main</a>
+      </button>
       <div class="login-box">
         <div class="row">
-
-
           <div class="col-md-6 login-left">
             <h2>LOGIN</h2>
             <?php
@@ -45,19 +41,11 @@ include 'connect.php';
               <div class="form-group ">
                 <label>Enter USN</label>
                 <input type="text" class="form-control" name="usn" placeholder="Enter USN" autocomplete="off">
-
-
               </div>
-
-
-
               <div class="form-group">
                 <label>Password</label>
                 <input type="password" class="form-control" name="stud_password" placeholder="Password" autocomplete="off">
-
               </div>
-
-
               <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
           </div>
@@ -92,23 +80,19 @@ include 'connect.php';
               </div>
 
               <button type="submit" class="btn btn-primary">Submit</button>
-
             </form>
           </div>
         </div>
       </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </section>
   <style>
-    .stu{
-      float:left;
-      position:absolute;
-      top:5%;
-      
+    .stu {
+      float: left;
+      position: absolute;
+      top: 5%;
     }
-   
   </style>
 </body>
 
